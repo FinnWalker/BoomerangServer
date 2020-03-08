@@ -6,8 +6,8 @@ const fs = require("fs");
 const path = require("path");
 const app = express();
 
-const fps = 20;
-const speed = 1;
+const fps = 15;
+const speed = 1.5;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan("combined"));
@@ -44,7 +44,7 @@ async function email(path, path2, email) {
       // Binary Buffer attachment
 
       {
-        filename: "capture.png",
+        filename: "Huddle.png",
         //filename: "topboard.png",
         path: path2
         //path: pathModule.join(__dirname, "topboard.png"),
@@ -54,7 +54,7 @@ async function email(path, path2, email) {
 
       // File Stream attachment
       {
-        filename: "video.mp4",
+        filename: "HuddleBoom.mp4",
         path: path
         //cid: "video" // should be as unique as possible
       }
@@ -87,31 +87,31 @@ const sequence = (req, res) => {
       files.image_12 &&
       files.image_13 &&
       files.image_14 &&
-      files.image_15 &&
-      files.image_16 &&
-      files.image_17 &&
-      files.image_18 &&
-      files.image_19 &&
-      files.image_20 &&
-      files.image_21 &&
-      files.image_22 &&
-      files.image_23 &&
-      files.image_24 &&
-      files.image_25 &&
-      files.image_26 &&
-      files.image_27 &&
-      files.image_28 &&
-      files.image_29 &&
-      files.image_30 &&
-      files.image_31 &&
-      files.image_32 &&
-      files.image_33 &&
-      files.image_34 &&
-      files.image_35 &&
-      files.image_36 &&
-      files.image_37 &&
-      files.image_38 &&
-      files.image_39 &&
+      // files.image_15 &&
+      // files.image_16 &&
+      // files.image_17 &&
+      // files.image_18 &&
+      // files.image_19 &&
+      // files.image_20 &&
+      // files.image_21 &&
+      // files.image_22 &&
+      // files.image_23 &&
+      // files.image_24 &&
+      // files.image_25 &&
+      // files.image_26 &&
+      // files.image_27 &&
+      // files.image_28 &&
+      // files.image_29 &&
+      // files.image_30 &&
+      // files.image_31 &&
+      // files.image_32 &&
+      // files.image_33 &&
+      // files.image_34 &&
+      // files.image_35 &&
+      // files.image_36 &&
+      // files.image_37 &&
+      // files.image_38 &&
+      // files.image_39 &&
       // files.image_40 &&
       // files.image_41 &&
       // files.image_42 &&
@@ -152,7 +152,7 @@ const sequence = (req, res) => {
           "images_2",
           "%02d.png"
         )} -filter_complex "[0]reverse[r];[0][r]concat,loop=2:${fps *
-          2},setpts=N/${fps * speed}/TB" -crf 25 -pix_fmt yuv420p ${path.join(
+          4},setpts=N/${fps * speed}/TB" -crf 25 -pix_fmt yuv420p ${path.join(
           __dirname,
           "images_2",
           "boomerang.mp4"
