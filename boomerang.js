@@ -22,13 +22,13 @@ async function email(path, path2, email) {
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-      user: "NRLFanWall@gmail.com", // generated ethereal user
-      pass: "catalystvr360$" // generated ethereal password
+      user: "TelstraHuddle@catalystvr.com.au", // generated ethereal user
+      pass: "catalyst123" // generated ethereal password
     }
   });
 
   let message = {
-    from: "NRLFanWall@gmail.com",
+    from: "TelstraHuddle@catalystvr.com.au",
 
     // Comma separated list of recipients
     to: email,
