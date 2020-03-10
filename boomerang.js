@@ -17,7 +17,7 @@ app.use("/", express.static("public"));
 const formidable = require("formidable");
 
 async function email(path, path2, email) {
-  console.log("trying");
+  console.log("Attempting to send email");
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 587,
@@ -180,7 +180,7 @@ const sequence = (req, res) => {
       res.status(200).json({ message: "Data received." });
       require("dns").resolve("www.google.com", function(err) {
         if (err) {
-          console.log("No connection");
+          console.log("Not online. Storing files.");
           fs.mkdirSync(path.join(__dirname, "offline", fields.email));
 
           fs.renameSync(
@@ -196,7 +196,7 @@ const sequence = (req, res) => {
             )
           );
         } else {
-          console.log("connection");
+          console.log("Connected.");
           email(
             `${path.join(__dirname, "images_2", "boomerang.mp4")}`,
             `${path.join(__dirname, "images_2", "capture.png")}`,
